@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: contos-air
+  labels:
+    app.kubernetes.io/name: contos-air
+    app.kubernetes.io/part-of: contos-air-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: contos-air
